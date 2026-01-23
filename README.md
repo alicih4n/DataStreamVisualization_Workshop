@@ -4,7 +4,7 @@
 ## 👥 Team Members
 *   **Member 1:** Ali
 *   **Member 2:** Roshan
-*   **Member 3:** Lohith
+*   **Member 3:** Lohith Reddy Danda
 
 ---
 
