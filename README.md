@@ -21,6 +21,7 @@ The goal of this project is to build a **Predictive Maintenance Dashboard** that
 *   `StreamingSimulator.py`: Custom Python module developed to handle the CSV data streaming and SQLite database interactions.
 *   `data/`: Contains the robot dataset (`RMBR4-2_export_test.csv`).
 *   `documents/`: Documentation and ER diagrams.
+*   `Submission_Group2.pdf`: Official submission document.
 
 ## 🚀 How to Run
 1.  Install dependencies:
