@@ -11,7 +11,7 @@
 ## 📝 Use Case: Manufacturing Robot Predictive Maintenance
 In this hands-on workshop, our team built a **Predictive Maintenance Dashboard** application. This tool provides visibility for an Anomaly Detection and response management workflow in a manufacturing facility.
 
-### \u2705 Grading Criteria Met (Level 5)
+###  Grading Criteria Met (Level 5)
 1.  **Remote Database**: Uses a live **Neon.tech PostgreSQL** database for data persistence.
 2.  **Data Collection**: Streams data from the CSV one record at a time with a **2-second interval** simulated delay.
 3.  **Dynamic Dashboard**: Visualizes real-time performance to detect anomalies, configured to highlight thresholds (Value > 6).
