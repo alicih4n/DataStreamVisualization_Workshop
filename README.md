@@ -2,9 +2,9 @@
 ### Foundations of Machine Learning Frameworks - Workshop
 
 ## 👥 Team Members
-*   **Member 1:** Ali
-*   **Member 2:** Roshan
-*   **Member 3:** Lohith
+*   **Member 1:** Ali (ID: 9091405)
+*   **Member 2:** Lohith (ID: 9054407)
+*   **Member 3:** Roshan (ID: 8951614)
 
 ---
 
