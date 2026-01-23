@@ -4,7 +4,7 @@
 ## 👥 Team Members
 *   **Member 1:** Ali (ID: 9091405)
 *   **Member 2:** Lohith (ID: 9054407)
-*   **Member 3:** Roshan (ID: 8951614)
+*   **Member 3:** Roshan Bartaula (ID: 8951614)
 
 ---
 
