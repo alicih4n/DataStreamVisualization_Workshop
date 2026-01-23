@@ -2,9 +2,9 @@
 ### Foundations of Machine Learning Frameworks - Workshop
 
 ## 👥 Team Members
-*   **Member 1:** [REPLACE WITH NAME]
-*   **Member 2:** [REPLACE WITH NAME]
-*   **Member 3:** [REPLACE WITH NAME]
+*   **Member 1:** Ali
+*   **Member 2:** Roshan
+*   **Member 3:** Lohith
 
 ---
 
