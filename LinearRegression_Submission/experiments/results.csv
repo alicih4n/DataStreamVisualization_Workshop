@@ -1,2 +1,0 @@
-timestamp,model,feature,rmse,r2,params
-2026-01-30T10:30:07.812730,scratch,MedInc,0.8420900313263312,0.45885930832746413,"{'type': 'scratch', 'learning_rate': 0.01, 'iterations': 1000}"

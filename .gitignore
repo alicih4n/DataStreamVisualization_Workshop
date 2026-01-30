@@ -1,8 +1,0 @@
-__pycache__/
-*.db
-*.sqlite
-.DS_Store
-.ipynb_checkpoints/
-verify_submission.py
-setup_notebook.py
-DataStreamVisualization_Workshop_Original_Backup.ipynb

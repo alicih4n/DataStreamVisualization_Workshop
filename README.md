@@ -1,56 +1,69 @@
-# Predictive Maintenance Dashboard
+# Linear Regression Architecture Workshop
 ### Foundations of Machine Learning Frameworks - Workshop
 
-## 👥 Team: Group 2
-*   **Ali (ID: 9091405)**
-*   **Lohith (ID: 9054407)**
-*   **Roshan Bartaula (ID: 8951614)**
+## 👥 Team
+*   Group 2
 
 ---
 
-## 📝 Use Case: Manufacturing Robot Predictive Maintenance
-In this hands-on workshop, our team built a **Predictive Maintenance Dashboard** application. This tool provides visibility for an Anomaly Detection and response management workflow in a manufacturing facility.
+## 🏗 Project Structure
+This repository is organized to ensure modularity, reproducibility, and ease of evaluation:
 
-###  Grading Criteria Met (Level 5)
-1.  **Remote Database**: Uses a live **Neon.tech PostgreSQL** database for data persistence.
-2.  **Data Collection**: Streams data from the CSV one record at a time with a **2-second interval** simulated delay.
-3.  **Dynamic Dashboard**: Visualizes real-time performance to detect anomalies, configured to highlight thresholds (Value > 6).
+```
+.
+│── data/
+│   ├── raw/                 # Original immutable data (California Housing)
+│   ├── processed/           # Cleaned data ready for modeling
+│── notebooks/
+│   ├── EDA.ipynb            # Exploratory Data Analysis & Data Sourcing
+│   ├── linear_regression.ipynb # Model training & comparison (Scratch vs Scikit-Learn)
+│── src/                     # Source code for reproducibility
+│   ├── data_loader.py       # Functions to load data
+│   ├── preprocessing.py     # Scaling and feature selection
+│   ├── model.py             # Linear Regression class (Gradient Descent)
+│   ├── evaluation.py        # Metrics calculation (RMSE, R2)
+│── configs/
+│   ├── experiment_config.yaml # Hyperparameters (learning rate, iterations)
+│── experiments/
+│   ├── results.csv          # Logged metrics from runs
+│── requirements.txt         # Dependencies
+│── README.md                # This file
+```
 
-## 📈 Analysis & Business Value
-### Findings (Step 3)
-*   **High Load Axes**: `Axis #2` and `Axis #3` show significant volatility (Max ~37.4), indicating they are the primary stress points.
-*   **Stable Operation**: Axes 4-8 remain stable (< 1.0).
-*   **Threshold**: A threshold of **6.0** effectively separates normal operation from critical maintenance events.
-
-### Business Impact (Step 4)
-This dashboard directly mitigates the **480 Minutes of Downtime** risk by:
-*   **Predictive Alerting**: Critical alerts (>6.0) allow for scheduled maintenance before failure.
-*   **Cost Reduction**: Moving from reactive repairs to proactive servicing.
-
-## 🔧 Project Files
-*   `DataStreamVisualization_Workshop.ipynb`: The main Jupyter Notebook containing:
-    *   Step 1: Simulation Setup & Remote DB Connection
-    *   Step 2: Live Data Streaming & Dashboard Visualization
-    *   Step 3: Analytical Overview
-*   `StreamingSimulator.py`: Helper class for streaming CSV operations.
-*   `Submission_Group2.pdf`: Official PDF submission including team details.
-*   `requirements.txt`: Dependencies required to run the project.
-*   `data/`: Contains the specific robot dataset (`RMBR4-2_export_test.csv`).
+---
 
 ## 🚀 How to Run
-1.  **Clone the Repository**:
-    ```bash
-    git clone https://github.com/alicih4n/DataStreamVisualization_Workshop.git
-    cd DataStreamVisualization_Workshop
-    ```
-2.  **Install Dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-3.  **Run the Notebook**:
-    Open `DataStreamVisualization_Workshop.ipynb` in Jupyter Lab or VS Code and click "Run All".
-    *   *Note: The notebook is pre-configured to connect to our Neon Database.*
 
-## 📊 Dataset
-The dataset represents sensor readings from robot axes, focused on identifying Torque Tube Failures before they lead to downtime.
-*   **Source**: Provided by Workshop Instructor
+### 1. Setup Environment
+Ensure you have Python 3.9+ installed.
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### 2. Configure Experiment
+Edit `configs/experiment_config.yaml` to change hyperparameters:
+- `learning_rate`: Step size for Gradient Descent.
+- `iterations`: Number of training loops.
+- `feature_column`: The feature to use for univariate regression (e.g., `MedInc`).
+
+### 3. Run Notebooks
+Start Jupyter Lab or Notebook:
+```bash
+jupyter lab
+```
+
+1.  Open **`notebooks/EDA.ipynb`** to explore the dataset.
+2.  Open **`notebooks/linear_regression.ipynb`** to train the model and see the validation visualization.
+
+---
+
+## 🧪 Experiment Results
+We compare our **"From Scratch"** implementation against `scikit-learn` to validate correctness.
+
+*   **Metric**: Root Mean Squared Error (RMSE) on Test Set (20% split).
+*   **Target**: Median House Value (`MedHouseVal`).
+*   **Feature**: Median Income (`MedInc`).
+
+*(Results will be populated in `experiments/results.csv` after running the notebook.)*
