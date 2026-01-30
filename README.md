@@ -12,11 +12,12 @@ This repository is organized to ensure modularity, reproducibility, and ease of 
 ```
 .
 │── data/
-│   ├── raw/                 # Original immutable data (California Housing)
+│   ├── raw/                 # Original immutable data (California Housing, Ontario Synthetic)
 │   ├── processed/           # Cleaned data ready for modeling
 │── notebooks/
-│   ├── EDA.ipynb            # Exploratory Data Analysis & Data Sourcing
-│   ├── linear_regression.ipynb # Model training & comparison (Scratch vs Scikit-Learn)
+│   ├── EDA.ipynb            # Data Sourcing & Exploratory Data Analysis (Run this FIRST)
+│   ├── linear_regression.ipynb # Model training, evaluation & comparison (Scratch vs Scikit-Learn)
+│   ├── RobotPM_MLOps.ipynb  # MLOps architecture & Orchestration Design
 │── src/                     # Source code for reproducibility
 │   ├── data_loader.py       # Functions to load data
 │   ├── preprocessing.py     # Scaling and feature selection
@@ -35,35 +36,48 @@ This repository is organized to ensure modularity, reproducibility, and ease of 
 ## 🚀 How to Run
 
 ### 1. Setup Environment
-Ensure you have Python 3.9+ installed.
+Ensure you have Python 3.9+ installed and a virtual environment active (recommended).
 
 ```bash
 # Install dependencies
 pip install -r requirements.txt
 ```
 
-### 2. Configure Experiment
-Edit `configs/experiment_config.yaml` to change hyperparameters:
-- `learning_rate`: Step size for Gradient Descent.
-- `iterations`: Number of training loops.
-- `feature_column`: The feature to use for univariate regression (e.g., `MedInc`).
+### 2. Run the Data Pipeline (Critical)
+You **must** run the EDA notebook first to generate the raw datasets.
 
-### 3. Run Notebooks
-Start Jupyter Lab or Notebook:
-```bash
-jupyter lab
-```
+1.  Start Jupyter:
+    ```bash
+    jupyter lab
+    ```
+2.  Open **`notebooks/EDA.ipynb`**.
+    *   Run all cells.
+    *   This will download California Housing data and generate synthetic Ontario data in `data/raw/`.
 
-1.  Open **`notebooks/EDA.ipynb`** to explore the dataset.
-2.  Open **`notebooks/linear_regression.ipynb`** to train the model and see the validation visualization.
+### 3. Run Experiments
+Open **`notebooks/linear_regression.ipynb`**.
+*   Run all cells.
+*   This will:
+    1.  Load the data generated in Step 2.
+    2.  Train a Linear Regression model from scratch (Gradient Descent).
+    3.  Train a Scikit-Learn baseline.
+    4.  Compare the results and plot the regression line.
+    5.  Save metrics to `experiments/results.csv`.
+
+### 4. Explore MLOps Architecture
+Open **`notebooks/RobotPM_MLOps.ipynb`**.
+*   This notebook demonstrates the object-oriented architecture for a robust ML pipeline.
 
 ---
 
-## 🧪 Experiment Results
-We compare our **"From Scratch"** implementation against `scikit-learn` to validate correctness.
+## 🧪 Verified Results
+After running `linear_regression.ipynb`, check `experiments/results.csv`. You should see results similar to:
 
-*   **Metric**: Root Mean Squared Error (RMSE) on Test Set (20% split).
-*   **Target**: Median House Value (`MedHouseVal`).
-*   **Feature**: Median Income (`MedInc`).
+```csv
+Model,RMSE
+Linear Regression (Scratch),0.8421
+Linear Regression (Sklearn),0.8421
+```
 
-*(Results will be populated in `experiments/results.csv` after running the notebook.)*
+*   **Target**: Median House Value (`MedHouseVal`)
+*   **Feature**: Median Income (`MedInc`)
