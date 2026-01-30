@@ -1,0 +1,20 @@
+experiment:
+  name: "Univariate Linear Regression - California Housing"
+  author: "Group 2"
+  version: "1.0"
+
+data:
+  raw_path: "../data/raw/california_housing.csv"
+  processed_path: "../data/processed/california_processed.csv"
+  target_column: "MedHouseVal"
+  feature_column: "MedInc"  # The univariate feature
+  # db_uri: "" # Placeholder for optional DB connection
+
+model:
+  learning_rate: 0.01
+  iterations: 1000
+  test_size: 0.2
+  random_state: 42
+
+output:
+  results_file: "../experiments/results.csv"
