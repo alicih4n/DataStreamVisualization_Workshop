@@ -21,6 +21,9 @@ def create_pdf():
     pdf.set_font('Arial', '', 11)
     pdf.cell(0, 6, 'Name: Ali Cihan Ozdemir (ID: 9091405)', 0, 1)
     pdf.cell(0, 6, 'Teammate: Lohith Reddy (ID: 9054470)', 0, 1)
+    pdf.set_font('Arial', 'I', 10)
+    pdf.cell(0, 6, 'Note: Roshan was unable to attend due to illness.', 0, 1)
+    pdf.set_font('Arial', '', 11)
     pdf.cell(0, 6, 'Group: 2', 0, 1)
     pdf.ln(5)
     

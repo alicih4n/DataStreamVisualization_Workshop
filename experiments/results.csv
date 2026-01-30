@@ -1,0 +1,3 @@
+Model,RMSE
+Linear Regression (Scratch),1.6731881755973197
+Linear Regression (Sklearn),1.6731903126746532

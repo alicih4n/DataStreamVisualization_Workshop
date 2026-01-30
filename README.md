@@ -4,6 +4,7 @@
 ## 👥 Team
 *   **Ali Cihan Ozdemir** (ID: 9091405)
 *   **Lohith Reddy** (ID: 9054470)
+*   *Note: Roshan was unable to participate in this specific session due to illness.*
 
 ---
 
