@@ -16,6 +16,17 @@ In this hands-on workshop, our team built a **Predictive Maintenance Dashboard**
 2.  **Data Collection**: Streams data from the CSV one record at a time with a **2-second interval** simulated delay.
 3.  **Dynamic Dashboard**: Visualizes real-time performance to detect anomalies, configured to highlight thresholds (Value > 6).
 
+## 📈 Analysis & Business Value
+### Findings (Step 3)
+*   **High Load Axes**: `Axis #2` and `Axis #3` show significant volatility (Max ~37.4), indicating they are the primary stress points.
+*   **Stable Operation**: Axes 4-8 remain stable (< 1.0).
+*   **Threshold**: A threshold of **6.0** effectively separates normal operation from critical maintenance events.
+
+### Business Impact (Step 4)
+This dashboard directly mitigates the **480 Minutes of Downtime** risk by:
+*   **Predictive Alerting**: Critical alerts (>6.0) allow for scheduled maintenance before failure.
+*   **Cost Reduction**: Moving from reactive repairs to proactive servicing.
+
 ## 🔧 Project Files
 *   `DataStreamVisualization_Workshop.ipynb`: The main Jupyter Notebook containing:
     *   Step 1: Simulation Setup & Remote DB Connection
