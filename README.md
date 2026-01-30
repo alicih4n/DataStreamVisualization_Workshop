@@ -2,7 +2,8 @@
 ### Foundations of Machine Learning Frameworks - Workshop
 
 ## 👥 Team
-*   Group 2
+*   **Ali Cihan Ozdemir** (ID: 9091405)
+*   **Lohith Reddy** (ID: 9054470)
 
 ---
 
