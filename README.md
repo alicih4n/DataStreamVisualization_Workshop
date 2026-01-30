@@ -1,4 +1,4 @@
-# Linear Regression Architecture Workshop
+# Robot Maintenance Analysis
 ### Foundations of Machine Learning Frameworks - Workshop
 
 ## 👥 Team
@@ -8,26 +8,19 @@
 ---
 
 ## 🏗 Project Structure
-This repository is organized to ensure modularity, reproducibility, and ease of evaluation:
+This repository analyzes robot axis currents for predictive maintenance:
 
 ```
 .
 │── data/
-│   ├── raw/                 # Original immutable data (California Housing, Ontario Synthetic)
-│   ├── processed/           # Cleaned data ready for modeling
+│   ├── raw/                 # Raw Robot Maintenance Data
+│   ├── processed/           # Cleaned current data (Axis 1-14)
 │── notebooks/
-│   ├── EDA.ipynb            # Data Sourcing & Exploratory Data Analysis (Run this FIRST)
-│   ├── linear_regression.ipynb # Model training, evaluation & comparison (Scratch vs Scikit-Learn)
-│   ├── RobotPM_MLOps.ipynb  # MLOps architecture & Orchestration Design
-│── src/                     # Source code for reproducibility
-│   ├── data_loader.py       # Functions to load data
-│   ├── preprocessing.py     # Scaling and feature selection
-│   ├── model.py             # Linear Regression class (Gradient Descent)
-│   ├── evaluation.py        # Metrics calculation (RMSE, R2)
-│── configs/
-│   ├── experiment_config.yaml # Hyperparameters (learning rate, iterations)
+│   ├── EDA.ipynb            # Data Cleaning, Time Series & Correlation Analysis
+│   ├── linear_regression.ipynb # Modeling Axis relationships (Scratch vs Sklearn)
+│── src/                     # Source code modules
 │── experiments/
-│   ├── results.csv          # Logged metrics from runs
+│   ├── results.csv          # RSME Validation results
 │── requirements.txt         # Dependencies
 │── README.md                # This file
 ```
@@ -37,48 +30,24 @@ This repository is organized to ensure modularity, reproducibility, and ease of 
 ## 🚀 How to Run
 
 ### 1. Setup Environment
-Ensure you have Python 3.9+ installed and a virtual environment active (recommended).
-
 ```bash
-# Install dependencies
 pip install -r requirements.txt
 ```
 
-### 2. Run the Data Pipeline (Critical)
-You **must** run the EDA notebook first to generate the raw datasets.
+### 2. Run Data Pipeline (EDA)
+Open **`notebooks/EDA.ipynb`**.
+*   This notebook ingests `robot_maintenance_data.csv`.
+*   It filters for "current" traits and handles timestamps.
+*   It generates visualizations for axis behavior.
 
-1.  Start Jupyter:
-    ```bash
-    jupyter lab
-    ```
-2.  Open **`notebooks/EDA.ipynb`**.
-    *   Run all cells.
-    *   This will download California Housing data and generate synthetic Ontario data in `data/raw/`.
-
-### 3. Run Experiments
+### 3. Run Modeling
 Open **`notebooks/linear_regression.ipynb`**.
-*   Run all cells.
-*   This will:
-    1.  Load the data generated in Step 2.
-    2.  Train a Linear Regression model from scratch (Gradient Descent).
-    3.  Train a Scikit-Learn baseline.
-    4.  Compare the results and plot the regression line.
-    5.  Save metrics to `experiments/results.csv`.
-
-### 4. Explore MLOps Architecture
-Open **`notebooks/RobotPM_MLOps.ipynb`**.
-*   This notebook demonstrates the object-oriented architecture for a robust ML pipeline.
+*   This notebook trains a Linear Regression model.
+*   **Objective**: Predict Axis #6 (Wrist) current based on Axis #1 (Base).
+*   It compares a "From Scratch" Gradient Descent implementation against Scikit-Learn.
 
 ---
 
-## 🧪 Verified Results
-After running `linear_regression.ipynb`, check `experiments/results.csv`. You should see results similar to:
-
-```csv
-Model,RMSE
-Linear Regression (Scratch),0.8421
-Linear Regression (Sklearn),0.8421
-```
-
-*   **Target**: Median House Value (`MedHouseVal`)
-*   **Feature**: Median Income (`MedInc`)
+## 🧪 Experiments
+We check if the current of one axis linearly correlates with another, implying coordinated movement patterns.
+Deviations from this linear relationship in real-time could indicate mechanical wear or anomalies.
