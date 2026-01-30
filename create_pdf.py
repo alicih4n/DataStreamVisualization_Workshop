@@ -43,8 +43,8 @@ def create_pdf():
     pdf.set_font('Arial', '', 10)
     structure = (
         "- data/raw/: robot_maintenance_data.csv (RMBR4-2 raw export).\n"
-        "- data/processed/: robot_current_clean.csv (Cleaned current data).\n"
-        "- notebooks/EDA.ipynb: Data ingestion, time-series plotting, and specific feature correlation.\n"
+        "- data/processed/: robot_current_clean.csv (Cleaned CSV) & robot_data.db (SQLite).\n"
+        "- notebooks/EDA.ipynb: Data ingestion, DB storage, and Time Series Analysis.\n"
         "- notebooks/linear_regression.ipynb: Modeling axis relationships using custom gradient descent.\n"
         "- src/: Reusable modules.\n"
         "- experiments/: Results logging."

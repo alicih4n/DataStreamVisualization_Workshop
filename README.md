@@ -14,7 +14,7 @@ This repository analyzes robot axis currents for predictive maintenance:
 .
 │── data/
 │   ├── raw/                 # Raw Robot Maintenance Data
-│   ├── processed/           # Cleaned current data (Axis 1-14)
+│   ├── processed/           # Cleaned current data (CSV & SQLite DB)
 │── notebooks/
 │   ├── EDA.ipynb            # Data Cleaning, Time Series & Correlation Analysis
 │   ├── linear_regression.ipynb # Modeling Axis relationships (Scratch vs Sklearn)
